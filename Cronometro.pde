@@ -21,6 +21,6 @@ class Cronometro
   void dibujar()
   {   
        tiempoActual= System.currentTimeMillis()- tiempoInicial;
-       text( tiempoActual, 20, 20);
+       text( tiempoActual, 20, 50);
   }
 }

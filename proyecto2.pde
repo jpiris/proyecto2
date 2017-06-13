@@ -5,6 +5,8 @@ import java.awt.geom.*;
 
 Pagina p1,p2;
 Estado estado;
+boolean b;
+Cronometro cr;
 
 void setup()
 {    
@@ -22,14 +24,19 @@ void setup()
   botonesPagina1[0]=new Texto(50, 50, 100, 100, c1, 50, "pulsar", "Algerian");
   
   p1= new Pagina(0,0,width, height, c1,"dibujo1.jpg", dibujosP1, textosP1, botonesPagina1);  
+   cr = new Cronometro();
+   b = false;
+  
 }
 
 void draw()
 { background(0);
   p1.dibujar();
+  if (b) cr.dibujar();
 }
 
 void mousePressed()
-{   if (p1.botones[0].pertenece(mouseX,mouseY))
+{   if (p1.botones[0].pertenece(mouseX,mouseY)){
         println("has pulsado el boton");
+        b = ! b;}
 }
